@@ -1,16 +1,15 @@
 function findMinAndRemoveSorted (array) {
-    while (array.length != 0) {
-        return array.shift()
-    }
+    return array.shift()
 }
 
 function merge (leftArr, rightArr) {
     let sortedArr = []
+
     while (leftArr.length && rightArr.length) {
         if (leftArr[0] < rightArr[0]) {
-            sortedArr.push(leftArr.shift())
+            sortedArr.push(findMinAndRemoveSorted(leftArr))
         } else {
-            sortedArr.push(rightArr.shift())
+            sortedArr.push(findMinAndRemoveSorted(rightArr))
         }
     }
 
